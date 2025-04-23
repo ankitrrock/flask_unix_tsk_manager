@@ -34,15 +34,29 @@ docker run -p 5000:5000 flask-task-api
 
 
 🔄 Create a Task
-curl -X POST http://localhost:5000/tasks \
--H "Content-Type: application/json" \
--d '{"name": "Example Task"}'
+curl --location 'http://localhost:5000/tasks' \
+--header 'Content-Type: application/json' \
+--data '{"name": "Backup logs",
+"access_token":"0000"
+}'
 
 📥 GET /tasks
-curl -X GET http://localhost:5000/tasks
+curl --location --request GET 'http://localhost:5000/tasks' \
+--header 'Content-Type: application/json' \
+--data '{
+"access_token":"0000"
+}'
 
-🔍 GET /tasks/<id>
-curl -X GET http://localhost:5000/tasks/1
+🔍 POST /tasks/<id>
+curl --location --request GET 'http://localhost:5000/tasks/7' \
+--header 'Content-Type: application/json' \
+--data '{
+"access_token":"0000"
+}'
 
 🗑️ DELETE /tasks/<id>
-curl -X DELETE http://localhost:5000/tasks/1
+curl --location --request DELETE 'http://localhost:5000/tasks/8' \
+--header 'Content-Type: application/json' \
+--data '{
+"access_token":"0000"
+}'
