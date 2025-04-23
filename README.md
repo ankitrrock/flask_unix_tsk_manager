@@ -20,11 +20,17 @@ A lightweight RESTful API that mimics Unix-style process management with simple 
 ### 🐍 1. Clone and Set Up Virtual Environment
 
 ```bash
-git clone https://github.com/yourusername/flask_unix_task_manager.git
+git clone https://github.com/ankitrrock/flask_unix_task_manager.git
 cd flask_unix_task_manager
 python -m venv env
 source env/bin/activate  # or env\Scripts\activate on Windows
 pip install -r requirements.txt
+
+
+🐳 2. Run with Docker 
+docker build -t flask-task-api .
+docker run -p 5000:5000 flask-task-api
+
 
 
 🔄 Create a Task
